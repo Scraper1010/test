@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monstera Deliciosa - Plant Care</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5f1eb 0%, #e8ddd4 100%);
+            min-height: 100vh;
+            color: #4a5d23;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .plant-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .plant-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .plant-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            display: block;
+            border: 5px solid #7d8471;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .plant-name {
+            font-size: 2.5rem;
+            color: #2d3e0f;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .plant-scientific {
+            font-style: italic;
+            color: #6b7c5a;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .plant-description {
+            background: #f9f7f4;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 5px solid #7d8471;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .care-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .care-item {
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid #c3e6cb;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .care-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .care-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .care-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3e0f;
+            margin-bottom: 0.5rem;
+        }
+
+        .care-text {
+            color: #4a5d23;
+        }
+
+        .tips-section {
+            background: linear-gradient(135deg, #fff8e1 0%, #f5f1eb 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid #e8ddd4;
+        }
+
+        .tips-title {
+            font-size: 1.5rem;
+            color: #2d3e0f;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .tips-list {
+            list-style: none;
+        }
+
+        .tips-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .tips-list li::before {
+            content: "🌿";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+        }
+
+        .decorative-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .leaf {
+            position: absolute;
+            opacity: 0.1;
+            font-size: 3rem;
+            color: #7d8471;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .leaf:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .leaf:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
+        .leaf:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 4s; }
+        .leaf:nth-child(4) { bottom: 10%; right: 10%; animation-delay: 1s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .plant-card {
+                padding: 2rem;
+            }
+            
+            .plant-name {
+                font-size: 2rem;
+            }
+            
+            .care-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decorative-elements">
+        <div class="leaf">🍃</div>
+        <div class="leaf">🌿</div>
+        <div class="leaf">🍃</div>
+        <div class="leaf">🌿</div>
+    </div>
+
+    <div class="container">
+        <div class="plant-card">
+            <div class="plant-header">
+                <img src="/placeholder.svg?height=200&width=200" alt="Monstera Deliciosa" class="plant-image">
+                <h1 class="plant-name">Monstera Deliciosa</h1>
+                <p class="plant-scientific">Monstera deliciosa</p>
+            </div>
+
+            <div class="plant-description">
+                The Monstera Deliciosa, also known as the Swiss Cheese Plant, is a stunning tropical houseplant beloved for its large, glossy leaves with distinctive splits and holes. Native to Central America, this climbing plant brings a touch of jungle elegance to any indoor space.
+            </div>
+
+            <div class="care-grid">
+                <div class="care-item">
+                    <span class="care-icon">💧</span>
+                    <h3 class="care-title">Watering</h3>
+                    <p class="care-text">Water when top 1-2 inches of soil are dry. Usually every 1-2 weeks. Ensure good drainage to prevent root rot.</p>
+                </div>
+
+                <div class="care-item">
+                    <span class="care-icon">☀️</span>
+                    <h3 class="care-title">Light</h3>
+                    <p class="care-text">Bright, indirect light. Can tolerate some direct morning sun but avoid harsh afternoon rays.</p>
+                </div>
+
+                <div class="care-item">
+                    <span class="care-icon">🌡️</span>
+                    <h3 class="care-title">Temperature</h3>
+                    <p class="care-text">Ideal range: 65-80°F (18-27°C). Avoid cold drafts and sudden temperature changes.</p>
+                </div>
+
+                <div class="care-item">
+                    <span class="care-icon">💨</span>
+                    <h3 class="care-title">Humidity</h3>
+                    <p class="care-text">Prefers 50-60% humidity. Mist regularly or use a humidifier for best results.</p>
+                </div>
+
+                <div class="care-item">
+                    <span class="care-icon">🌱</span>
+                    <h3 class="care-title">Soil</h3>
+                    <p class="care-text">Well-draining potting mix. A blend of peat, perlite, and bark works wonderfully.</p>
+                </div>
+
+                <div class="care-item">
+                    <span class="care-icon">🍃</span>
+                    <h3 class="care-title">Fertilizer</h3>
+                    <p class="care-text">Feed monthly during growing season (spring/summer) with balanced liquid fertilizer.</p>
+                </div>
+            </div>
+
+            <div class="tips-section">
+                <h3 class="tips-title">Pro Care Tips</h3>
+                <ul class="tips-list">
+                    <li>Provide a moss pole or trellis for climbing support</li>
+                    <li>Wipe leaves regularly to keep them glossy and dust-free</li>
+                    <li>Fenestrations (holes) develop as the plant matures</li>
+                    <li>Propagate easily through stem cuttings with aerial roots</li>
+                    <li>Rotate weekly for even growth and light exposure</li>
+                    <li>Repot every 2-3 years or when rootbound</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
